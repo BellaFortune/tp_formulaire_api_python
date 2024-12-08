@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %}Submission Result{% endblock %} {%
+block content %}
+<div class="container">
+  <h2>Submission Details</h2>
+  <p><strong>Nom du bootcamp:</strong> {{ entry.nom_du_bootcamp }}</p>
+  <p><strong>Priorité de retour:</strong> {{ entry.priorite_de_retour }}</p>
+  <p><strong>Type de retour:</strong> {{ entry.type_de_retour }}</p>
+  <p><strong>Date:</strong> {{ entry.dates }}</p>
+  <p><strong>Évaluation:</strong> {{ entry.evaluation }}</p>
+  <p><strong>Commentaire:</strong> {{ entry.commentaire }}</p>
+  {% if entry.piece_joites %}
+  <p>
+    <strong>Pièce jointe:</strong>
+    <a href="{{ url_for('static', filename=entry.piece_joites) }}" download
+      >Télécharger</a
+    >
+  </p>
+  {% endif %}
+</div>
+{% endblock %}
